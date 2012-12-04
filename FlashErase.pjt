@@ -1,0 +1,26 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="C:\sBOX.111\exsamples\dsp\flashwriter\"
+ProjectType=Executable
+CPUFamily=TMS320C67XX
+Tool="Compiler"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Config="Release"
+
+[Source Files]
+Source="..\..\..\lib\sboxdev.LIB"
+Source="faccs.c"
+Source="FlashErase.c"
+Source="..\..\..\lib\iramboot.cmd"
+
+["Compiler" Settings: "Release"]
+Options=-q -o2 -eo.o67 -fr"C:\sBOX.111\exsamples\dsp\flashwriter\Release" -mv6710
+
+["DspBiosBuilder" Settings: "Release"]
+Options=-v6x
+
+["Linker" Settings: "Release"]
+Options=-q -m".\Release\FlashErase.map" -o"..\..\exe_flash\FlashErase.out" -x
+
